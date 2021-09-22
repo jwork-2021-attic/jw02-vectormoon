@@ -1,0 +1,28 @@
+@startuml
+actor  one as ONE
+actor  two as TWO
+actor  three as THREE
+actor  four as FOUR
+actor  five as FIVE
+actor  six as SIX
+actor  seven as SEVEN
+
+actor  geezer as Geezer
+actor  line as Line
+
+ONE -[#Blue]> Line : put(ONE)
+TWO -[#Blue]> Line : put(TWO)
+THREE -[#Blue]> Line : put(THREE)
+FOUR -[#Blue]> Line : put(FOUR)
+FIVE -[#Blue]> Line : put(FIVE)
+SIX -[#Blue]> Line : put(SIX)
+SEVEN -[#Blue]> Line : put(SEVEN)
+
+Geezer -[#Red]>  Geezer : setSorter()
+
+Geezer -[#Green]> ONE : lineUp()
+
+Geezer -[#Red]> Geezer : sort()
+
+Geezer -[#Red]> Geezer : getSortSteps & print
+@enduml

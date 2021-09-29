@@ -1,0 +1,70 @@
+@startuml
+
+class Line {
+    Position[] positions
+
+    void put()
+    Linable get()
+}
+
+class Position{
+    Linable linable
+
+    void setLinable()
+    Linable[] toArray()
+    String toString()
+}
+
+enum Monster{
+    int r
+    int g
+    int b
+    Position position
+
+    Gourd getGourdByRank()
+    int rank()
+    void swapPosition()
+    string toString()
+    void setPosition()
+    Position getPosition()
+    int getValue()
+}
+
+interface Linable {
+    void setPosition()
+    Position getPosition()
+    int getValue()
+}
+
+class Snake {
+    Sorter sorter
+    Geezer getTheGeezer()
+    void setSorter()
+    String lineUp()
+    String[] parsePlan()
+    void execute()
+}
+
+interface Sorter {
+    void load()
+    void sort()
+    String getPlan()
+}
+
+class BubbleSorter {
+    void load()
+    void swap()
+    void sort()
+    String getPlan()
+}
+
+Monster <|.. Linable : 实现
+Monster *-- Position : 组合 
+Position *-- Linable : 组合
+Line *-- Linable : 组合
+Line <-- Position : 包含
+
+Snake *-- Sorter : 组合
+BubbleSorter <|.. Sorter : 实现
+Line <-- Snake : 依赖
+@enduml

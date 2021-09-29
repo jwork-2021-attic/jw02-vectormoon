@@ -1,0 +1,23 @@
+@startuml
+actor  one as ONE
+actor  two as TWO
+actor  three as THREE
+actor  ... as ...
+actor  sixtyfour as SIXTYFOUR
+
+actor  snake as SNAKE
+actor  line as Line
+
+ONE -[#Blue]> Line : put(ONE)
+TWO -[#Blue]> Line : put(TWO)
+THREE -[#Blue]> Line : put(THREE)
+SIXTYFOUR -[#Blue]> Line : put(SIXTYFOUR)
+Line -[#Black]> SNAKE
+SNAKE -[#Red]>  SNAKE : setSorter()
+
+SNAKE -[#Green]> ONE : lineUp()
+
+SNAKE -[#Red]> SNAKE : sort()
+
+SNAKE -[#Red]> SNAKE : getSortSteps & print
+@enduml
